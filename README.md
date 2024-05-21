@@ -52,3 +52,6 @@ You can run the microservice locally using the following command:
     python random_image_from_directory.py
 
 Replace the image directory in the config file with the path to the directory containing your images before running.
+
+## UML Sequence Diagram
+![UML Diagram](https://github.com/sepej-osu/cs361-randomimage_microservice/blob/main/UML%20Sequence%20Diagram.png?raw=true)
