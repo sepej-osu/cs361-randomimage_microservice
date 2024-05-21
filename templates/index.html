@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Image Viewer</title>
+  <style>
+    #random-image{
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Image Request Example</h1>
+  <img id="random-image" src="" alt="Random Image">
+  <script>
+    const imageElement = document.getElementById('random-image');
+
+    function getRandomImage() {
+      fetch('http://127.0.0.1:5000/random_image')
+        .then(response => response.blob())
+        .then(blob => {
+          const imageUrl = URL.createObjectURL(blob);
+          imageElement.src = imageUrl;
+        })
+        .catch(error => {
+          console.error('Error fetching image:', error);
+        });
+    }
+
+    getRandomImage();
+  </script>
+</body>
+</html>
