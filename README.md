@@ -14,7 +14,7 @@ This microservice is built with Flask and serves random images from a specified 
 
 ## Usage
 
-The microservice uses Flask's `send_file` function to serve the file. You can read more about this function here.
+The microservice uses Flask's `send_file` function to serve the file. You can read more about this function [here](https://tedboy.github.io/flask/interface_api.useful_funcs.html#flask.send_file).
 
 To get a random image, send a GET request to the following URL:
 
