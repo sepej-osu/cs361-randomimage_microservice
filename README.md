@@ -22,6 +22,29 @@ To get a random image, send a GET request to the following URL:
 
 This will return a random image from the directory specified in your `config.txt` file.
 
+## Example Usage using Javascript
+
+An example using a request to get a random image can be seen [here](https://github.com/sepej-osu/cs361-randomimage_microservice/blob/c961aa02f66effd9262295f6dd43b4a8fb2cfa67/templates/index.html#L20)
+```
+<script>
+    const imageElement = document.getElementById('random-image');
+
+    function getRandomImage() {
+      fetch('http://127.0.0.1:5000/random_image')
+        .then(response => response.blob())
+        .then(blob => {
+          const imageUrl = URL.createObjectURL(blob);
+          imageElement.src = imageUrl;
+        })
+        .catch(error => {
+          console.error('Error fetching image:', error);
+        });
+    }
+
+    getRandomImage();
+</script>
+```
+
 ## Running the Microservice
 
 You can run the microservice locally using the following command:
