@@ -8,7 +8,7 @@ CONFIG_PATH = "config.txt"
 
 @app.route("/random_image")
 def random_image():
-    image_director = ""
+    image_directory = ""
     try:
         with open(CONFIG_PATH, 'r') as file:
             image_directory = file.read()
